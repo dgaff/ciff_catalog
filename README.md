@@ -1,5 +1,7 @@
 # CIFF Back Catalog
 
+![CIFF catalog](ciff_catalog.png)
+
 I wanted a more easily searchable CIFF and Points North back catalog than what's on the Points North Institute's [Back Catalog](https://pointsnorthinstitute.org/ciff/backcatalog/) webpage.
 
 This page currently covers 2005-2024. I'm not sure why 2025 is missing, and the 2026 festival just finished. I didn't give Claude a design system, so it has the usual Claude web output. It's a future project to skin it closer to the Points North look and feel.
