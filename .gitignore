@@ -1,1 +1,4 @@
 .DS_Store
+films_archive.json
+films.json
+__pycache__/
