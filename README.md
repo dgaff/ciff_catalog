@@ -1,5 +1,7 @@
 # CIFF Back Catalog
 
+This site is [live here](https://main.d3263998ou8ncn.amplifyapp.com/).
+
 ![CIFF catalog](ciff_catalog.png)
 
 I wanted a more easily searchable CIFF and Points North back catalog than what's on the Points North Institute's [Back Catalog](https://pointsnorthinstitute.org/ciff/backcatalog/) webpage.

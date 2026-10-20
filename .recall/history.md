@@ -117,3 +117,23 @@ I haven't committed anything. Your [README.md](README.md) still says the catalog
 **Claude:** The test copy worked: the active block was commented out, the earlier commented block was skipped, and the new block went in after them. Now I'll write CLAUDE.md and update .gitignore.
   - `Write: /Users/douggaff/doug-code/ciff_catalog/CLAUDE.md`
   - `Bash: printf 'films_archive.json\nfilms.json\n__pycache__/\n' >> .gitignore && cat .gitignore && git status --short`
+
+**Claude:** I moved the script into the repo as [tools/build_data.py](tools/build_data.py) and added a [CLAUDE.md](CLAUDE.md). The script's output is identical to the data now in index.html.
+
+**The script**
+- **Standalone:** it now needs only `films_archive.json`, not the old data.
+- **Refresh in one command:** `python3 tools/build_data.py films_archive.json --update-html` comments out the current data block in index.html and inserts the new one after it. It skips blocks that are already commented out, and it stops if there isn't exactly one active block.
+- **Inspect without changing the site:** without `--update-html`, it just writes `films.json` so you can look at the result first.
+- **Tested:** I ran `--update-html` on a scratch copy of the repo, and the old and new blocks came out as expected.
+
+**CLAUDE.md covers:**
+- How the single-file page is laid out.
+- The refresh steps, including the rule to comment out old data rather than delete it, and to ask before removing older commented blocks (each one is about 1.3 MB).
+- The follow-ups after a refresh: the footer year range, checking whether the README is out of date, reviewing changes to existing films, and checking that the page renders.
+- The cleaning rules and the record format the page's JavaScript depends on.
+
+**Other changes**
+- I added `films_archive.json`, `films.json` and `__pycache__/` to [.gitignore](.gitignore).
+- The "Refreshing the data" section of the README still tells you to paste the JSON into index.html by hand. I didn't edit the README; I can point that section at the script if you'd like.
+
+Nothing is committed yet. `git status` also shows an untracked `.recall/` folder from the Recall session log; you may want to add it to .gitignore too.
